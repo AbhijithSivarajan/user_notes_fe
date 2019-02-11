@@ -29,6 +29,8 @@ export default class Login extends Component {
     event.preventDefault();
     const { username, password } = this.state;
     userService.login(username, password);
+    this.props.userHasAuthenticated(true);
+    this.props.history.push("/user_notes");
   }
 
   render() {
